@@ -1,4 +1,4 @@
-# create-ecr-repository
+# create-aws-ecr-repository
 
 This GitHub Action creates an Amazon ECR repository if it does not already exist.
 
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create ECR repository
-        uses: <placeholder>/<placeholder>@<version>
+        uses: caring/create-aws-ecr@v1
         with:
           name: <repository-name>
 ```
@@ -37,12 +37,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create ECR repository
-        uses: caring/create-ecr-repository@v1
+        uses: caring/create-aws-ecr@v1
         with:
           name: my-repository
 ```
 
-This example workflow checks out the repository and creates an Amazon ECR repository named "my-repository" using the `create-ecr-repository` action.
+This example workflow checks out the repository and creates an Amazon ECR repository named "my-repository" using the `create-aws-ecr` action.
 
 ## License
 
