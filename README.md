@@ -5,9 +5,6 @@ This GitHub Action creates an Amazon ECR repository if it does not already exist
 ## Usage
 
 ```yaml
-name: Example Workflow
-
-on: [push]
 
 jobs:
   build:
@@ -30,9 +27,6 @@ jobs:
 ## Example
 
 ```yaml
-name: Example Workflow
-
-on: [push]
 
 jobs:
   build:
@@ -48,7 +42,7 @@ jobs:
           name: my-repository
 ```
 
-This example workflow checks out the repository and creates an Amazon ECR repository named "my-repository" using the `create-ecr-repository-action` action.
+This example workflow checks out the repository and creates an Amazon ECR repository named "my-repository" using the `create-ecr-repository` action.
 
 ## License
 
