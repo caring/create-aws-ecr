@@ -1,4 +1,4 @@
-# create-ecr-repository-action
+# create-ecr-repository
 
 This GitHub Action creates an Amazon ECR repository if it does not already exist.
 
@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Create ECR repository
         uses: <placeholder>/<placeholder>@<version>
@@ -40,10 +40,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Create ECR repository
-        uses: devops-team/create-ecr-repository-action@v1
+        uses: caring/create-ecr-repository@v1
         with:
           name: my-repository
 ```
