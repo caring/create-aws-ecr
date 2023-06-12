@@ -1,4 +1,4 @@
-name: create-ecr-repository
+name: create-amazon-ecr-repository
 description: Create Amazon ECR repository if not exist
 author: Devops Team
 
