@@ -1,0 +1,24 @@
+name: create-ecr-repository
+description: Create Amazon ECR repository if not exist
+author: Devops Team
+
+inputs:
+  name:
+    description: 'The name of the repository'
+    required: true
+    default: ${{ github.repository }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Create ECR repository
+      shell: bash
+      run: |
+        set -e
+        if ! aws ecr describe-repositories --repository-names ${{ inputs.name }} >/dev/null 2>&1; then
+          echo "Creating ECR repository ${{ inputs.name }}"
+          aws ecr create-repository --repository-name ${{ inputs.name }}
+          echo "ECR repository ${{ inputs.name }} created."
+        else
+          echo "ECR repository ${{ inputs.name }} already exists."
+        fi
