@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create ECR repository
-        uses: caring/create-aws-ecr-repository@v1
+        uses: caring/create-aws-ecr-repository@v1.0.1
         with:
           name: <repository-name>
 ```
