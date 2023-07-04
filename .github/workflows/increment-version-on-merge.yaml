@@ -17,9 +17,10 @@ jobs:
       - name: Calculate next version
         id: semver
         run: |
-          current_version=$(git describe --tags --abbrev=0)
-          next_version=$(conventional-recommended-bump -p angular)
-          echo "::set-output name=version::v${next_version}"
+          current_version=$(git tag -l 'v*' --sort=v:refname | tail -n 1)
+          next_version=$(conventional-recommended-bump -p angular -r "${current_version}" | awk '{print $2}')
+          new_version="v${next_version}"
+          echo "::set-output name=version::${new_version}"
       
       - name: Create tag
         # if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
