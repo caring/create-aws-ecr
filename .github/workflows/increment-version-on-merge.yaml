@@ -14,6 +14,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Node
+        uses: actions/setup-node@v3.5.1
+        with:
+          node-version: '16'
+
+      - name: Install conventional-changelog-cli
+        run: npm install -g conventional-changelog-cli
+
       - name: Calculate next version
         id: semver
         run: |
