@@ -5,7 +5,6 @@
 name: Increment Tag Version on Merge
 on:
   push:
-
 jobs:
   increment_version:
     runs-on: ubuntu-latest
