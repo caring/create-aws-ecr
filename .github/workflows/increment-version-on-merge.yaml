@@ -4,7 +4,8 @@
 
 name: Increment Tag Version on Merge
 on:
-  push:
+  pull_request:
+    types: [closed]
     
 jobs:
   increment_version:
@@ -37,7 +38,7 @@ jobs:
           echo "HIGHEST_TAG=$HIGHEST_TAG" >> $GITHUB_ENV
       
       - name: Create new tag with v prefix
-        # if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
+        if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
