@@ -4,8 +4,7 @@
 
 name: Increment Tag Version on Merge
 on:
-  pull_request:
-    types: [closed]
+  push:
     
 jobs:
   increment_version:
