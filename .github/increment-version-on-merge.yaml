@@ -4,7 +4,9 @@
 
 name: Increment Tag Version on Merge
 on:
-  push:
+  pull_request:
+    types: [closed]
+    
 jobs:
   increment_version:
     runs-on: ubuntu-latest
